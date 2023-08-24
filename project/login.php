@@ -14,8 +14,14 @@ if(isset($_POST['submit'])){
    $email = filter_var($email, FILTER_SANITIZE_STRING); 
    $pass = sha1($_POST['pass']);
    $pass = filter_var($pass, FILTER_SANITIZE_STRING); 
+   $role = $_POST['role'];
 
-   $select_users = $conn->prepare("SELECT * FROM `users` WHERE email = ? AND password = ? LIMIT 1");
+   if($role == 'owner'){
+      $select_users = $conn->prepare("SELECT * FROM `owners` WHERE email = ? AND password = ? LIMIT 1");
+   }
+   else{
+      $select_users = $conn->prepare("SELECT * FROM `tenants` WHERE email = ? AND password = ? LIMIT 1");
+   }
    $select_users->execute([$email, $pass]);
    $row = $select_users->fetch(PDO::FETCH_ASSOC);
 
@@ -27,6 +33,8 @@ if(isset($_POST['submit'])){
    }
 
 }
+
+
 
 ?>
 
@@ -54,10 +62,30 @@ if(isset($_POST['submit'])){
 <section class="form-container">
 
    <form action="" method="post">
+      
       <h3>welcome back!</h3>
       <input type="email" name="email" required maxlength="50" placeholder="enter your email" class="box">
       <input type="password" name="pass" required maxlength="20" placeholder="enter your password" class="box">
-      <p>don't have an account? <a href="register.html">register new</a></p>
+      <ul class="choices">
+            <li>
+                <label
+                    ><input type="radio" name="role" value="A" /><span
+                        >owner</span
+                    ></label
+                >
+            </li>+
+            <li>
+                <label
+                    ><input type="radio" name="role" value="B" /><span
+                        >tenant</span
+                    ></label
+                >
+            </li>
+        </ul>
+
+
+    </li>
+      <p>don't have an account? <a href="register.php">register new</a></p>
       <input type="submit" value="login now" name="submit" class="btn">
    </form>
 
