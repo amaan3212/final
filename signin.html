@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+	<style>
+		body {
+		  background-image: url('img.jpeg');
+		  background-repeat: no-repeat;
+		  background-attachment: fixed;  
+		  background-size: cover;
+		}
+	</style>
+<head>
+	<title>DWELL-SPOT/Signin</title>
+  	<link rel="stylesheet" href="signin1.css">
+</head>
+<body>
+	<main>
+	<div class="container">
+		<h1>Sign In</h1>
+			<form method="POST" action="dbsignin1.php">
+				<label for="username">UserName</label>
+			  	<input type="text" name="username" placeholder="UserName" required>
+			  	<label for="password">Password</label>
+			  	<input type="password" name="password" placeholder="Password" required>
+				<a href="reset1.html">Forgot Password?</a><br>
+				<div class="options">
+				<input type="radio" id="userRadio" name="role" value="user">
+				<label for="userRadio">User/Tenant</label>
+				<br>
+				<input type="radio" id="ownerRadio" name="role" value="owner" required>
+				<label for="ownerRadio">Owner</label>
+				<br>
+				<input type="radio" id="adminRadio" name="role" value="admin" required>
+				<label for="adminRadio">Admin</label>
+			  </div>
+			  <br>
+			  <input type="submit" value="Sign In">
+			<center><br>Don't have an account <a href="signup1.html"> sign up</a></center>
+		</form>
+	</main>
+	</div>
+</body>
+</html>

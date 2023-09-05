@@ -1,0 +1,19 @@
+{
+    "name": "wearejh/magento-composer-autoloader",
+    "type":"magento-module",
+    "description": "Magento Autoloader patch to require Composer's autoloader",
+    "authors": [
+        {
+            "name": "Aydin Hassan",
+            "email": "aydin@wearejh.com"
+        }
+    ],
+    "require": {
+        "magento-hackathon/magento-composer-installer": "*"
+    },
+    "extra": {
+        "map": [
+            ["src/code/Varien/Autoload.php", "app/code/local/Varien/Autoload.php"]
+        ]
+    }
+}

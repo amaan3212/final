@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <style>
+    body {
+      background-image: url('img.jpeg');
+      background-repeat: no-repeat;
+      background-attachment: fixed;  
+      background-size: cover;
+    }
+</style>
+<head>
+  <form action="signin.html" method="post">
+    <button type="submit">Back</button>
+    </form>
+  <title>Password Reset</title>
+  <link rel="stylesheet" type="text/css" href="reset1.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Password Reset</h1>
+    <form method="post" action="reset1.php">
+      <label for="Email">Email</label>
+      <input type="email" name="email" placeholder="Email" required>
+      <label for="Password">Password</label>
+      <input type="password" name="password" placeholder="New Password" required>
+      <label for="Confirm Password">Confirm password:</label>
+      <input type="password" name="confirm_password" placeholder="Confirm Password" required>
+      <div class="options">
+        <input type="radio" id="userRadio" name="role" value="user">
+        <label for="userRadio">User/Tenant</label>
+        <br>
+        <input type="radio" id="ownerRadio" name="role" value="owner" required>
+        <label for="ownerRadio">Owner</label>
+        <br>
+      </div>
+      <input type="submit" name="reset" value="Reset Password">
+      </div>
+    </form>
+  </div>
+</body>
+</html>

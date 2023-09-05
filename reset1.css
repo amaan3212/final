@@ -1,0 +1,37 @@
+
+.container {
+  max-width: 400px;
+  margin: 45px auto;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+  h1 {
+    text-align: center;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  input[type="email"],
+  input[type="password"] {
+    padding: 10px;
+	  border: none;
+	  border-radius: 5px;
+	  margin-bottom: 20px;
+  }
+  
+  input[type="submit"] {
+    padding: 10px;
+    background-color: #11799b;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  input[type="submit"]:hover {
+    background-color: #3e8e41;
+  }

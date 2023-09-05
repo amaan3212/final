@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<style>
+		body {
+		  background-image: url('img.jpeg');
+		  background-repeat: no-repeat;
+		  background-attachment: fixed;  
+		  background-size: cover;
+		}
+	</style>
+<head>
+	<title>DWELL-SPOT/Sign Up</title>
+	<link rel="stylesheet" type="text/css" href="signup1.css">
+</head>
+<body>
+	<div class="container">
+		<h1>Sign Up</h1>
+		<form method="POST" action="dbsignup.php">
+			<label for="Name">UserName</label>
+			<input type="text" name="username" placeholder="Name" required>
+			<label for="mail">Email</label>
+			<input type="email" name="email" placeholder="Email" required>
+			<label for="phno">Phone Number</label>
+			<input type="phno" name="phno" placeholder="PhoneNumber" required>
+			<label for="password">Password</label>
+			<input type="password" name="password" placeholder="Password" required>
+			<label for="confirm-password">Confirm Password</label>
+			<input type="password" name="confirm-password" placeholder="Confirm Password" required>
+			<div class="options">
+				<input type="radio" id="userRadio" name="role" value="user">
+				<label for="userRadio">User/Tenant</label>
+				<br>
+				<input type="radio" id="ownerRadio" name="role" value="owner">
+				<label for="ownerRadio">Owner</label>
+			  </div>
+			<input type="submit" value="Sign Up">
+		</form>
+	</div>
+</body>
+</html>
